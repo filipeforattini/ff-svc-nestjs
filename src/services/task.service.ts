@@ -1,40 +1,39 @@
 import { Cron } from '@nestjs/schedule';
 import { faker } from '@faker-js/faker';
-import { RMQService } from 'nestjs-rmq';
+import { getConnection } from 'typeorm';
 import { Injectable, Logger } from '@nestjs/common';
+import { AmqpConnection, RabbitSubscribe } from '@golevelup/nestjs-rabbitmq';
+
+import { Lead } from 'src/entities/lead.entity';
+import { Pageview } from 'src/entities/pageview.entity';
 
 @Injectable()
 export class TasksService {
   private readonly logger = new Logger(TasksService.name);
-  constructor(private readonly queue: RMQService) {}
+  constructor(private readonly queue: AmqpConnection) {}
 
   @Cron('* * * * * *')
   async handleCron() {
-    const pageview = this.createPageview();
-    console.log({ pageview });
+    const pageview = this.randomPageview();
 
     try {
-      await this.queue.send<number[], number>('pageviews.new', [1, 2, 3], {
-        expiration: 1000,
-        priority: 1,
-        persistent: true,
-        timeout: 5 * 1000,
-      });
-      // await this.queue.notify<string>('pageview', 'XXXXX');
+      await this.queue.publish('pageviews', 'new', new Pageview(pageview));
     } catch (error) {
       this.logger.error(error);
-      console.error(error);
     }
 
     if (faker.datatype.number({ min: 0, max: 10 }) === 0) {
-      const lead = this.createLead();
+      const lead = this.randomLead();
       lead.ip = pageview.ip;
-      // console.log({ lead });
-      // this.broker.sendToChannel("leads.new", lead);
+      try {
+        await this.queue.publish('leads', 'new', new Lead(lead));
+      } catch (error) {
+        this.logger.error(error);
+      }
     }
   }
 
-  createPageview() {
+  randomPageview() {
     return {
       ip: faker.internet.ip(),
       page: faker.internet.url(),
@@ -42,7 +41,7 @@ export class TasksService {
     };
   }
 
-  createLead() {
+  randomLead() {
     return {
       ip: null,
       name: faker.name.findName(),
@@ -52,5 +51,23 @@ export class TasksService {
       state: faker.address.stateAbbr(),
       address: faker.address.streetAddress(),
     };
+  }
+
+  @RabbitSubscribe({
+    exchange: 'pageviews',
+    routingKey: 'new',
+    queue: 'pageviews.new',
+  })
+  createPageview(pageview: Pageview) {
+    return getConnection('cn2').getRepository(Pageview).save(pageview);
+  }
+
+  @RabbitSubscribe({
+    exchange: 'leads',
+    routingKey: 'new',
+    queue: 'leads.new',
+  })
+  createLead(lead: Lead) {
+    return getConnection('cn2').getRepository(Lead).save(lead);
   }
 }
