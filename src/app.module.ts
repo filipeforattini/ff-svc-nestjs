@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ScheduleModule } from '@nestjs/schedule';
 import { RabbitMQModule } from '@golevelup/nestjs-rabbitmq';
 
-import { TasksService } from './services/task.service';
+import { GeneratorService } from './services/generator.service';
 import { LeadsController } from './controllers/leads.controller';
 import { PageviewController } from './controllers/pageview.controller';
 
@@ -15,6 +15,7 @@ const {
   MYSQL_CONNECTION_STRING,
   POSTGRES_CONNECTION_STRING,
   RABBITMQ_CONNECTION_STRING,
+  RABBITMQ_PREFETCH = '3',
 } = process.env;
 
 const TYPEDB = {
@@ -34,7 +35,7 @@ const getTypeFromString = (str) => TYPEDB[str.split('://')[0]];
       ),
       synchronize: true,
       autoLoadEntities: true,
-      entities: ['dist/**/*.entity{.ts,.js}'],
+      entities: ['dist/**/pageview.entity{.ts,.js}'],
       url: POSTGRES_CONNECTION_STRING || MYSQL_CONNECTION_STRING,
     }),
     TypeOrmModule.forRoot({
@@ -44,11 +45,13 @@ const getTypeFromString = (str) => TYPEDB[str.split('://')[0]];
       ),
       synchronize: true,
       autoLoadEntities: true,
-      entities: ['dist/**/*.entity{.ts,.js}'],
+      entities: ['dist/**/lead.entity{.ts,.js}'],
       url: MYSQL_CONNECTION_STRING || POSTGRES_CONNECTION_STRING,
     }),
     RabbitMQModule.forRoot(RabbitMQModule, {
       uri: RABBITMQ_CONNECTION_STRING,
+      prefetchCount: parseInt(RABBITMQ_PREFETCH),
+      enableControllerDiscovery: true,
       exchanges: [
         {
           name: 'pageviews',
@@ -61,7 +64,7 @@ const getTypeFromString = (str) => TYPEDB[str.split('://')[0]];
       ],
     }),
   ],
-  providers: [TasksService],
+  providers: [GeneratorService],
   controllers: [LeadsController, PageviewController],
 })
 export class AppModule {}

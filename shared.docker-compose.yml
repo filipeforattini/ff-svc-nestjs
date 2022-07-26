@@ -1,0 +1,34 @@
+version: "3.9"
+
+# networks
+
+networks:
+  default:
+    name: ff-cluster
+    external: true
+
+# services
+
+services:
+
+  app-nestjs:
+    image: node:17-alpine
+    volumes:
+      - .:/app
+    working_dir: /app
+    restart: unless-stopped
+    entrypoint: npm
+    command: start
+    external_links:
+      - redis
+    expose:
+      - 8080
+    ports:
+      - "8082:8080"
+    environment:
+      - NODE_ENV=local
+      - TZ=America/Sao_Paulo
+      - RABBITMQ_CONNECTION_STRING=amqp://ff-cluster:secret@rabbitmq:5672
+      - MYSQL_CONNECTION_STRING=mysql://ff-cluster:secret@mysql:3306/ff-cluster
+      - POSTGRES_CONNECTION_STRING=postgresql://ff-cluster:secret@postgresql:5432/ff-cluster
+      - GENERATOR_SIZE=100

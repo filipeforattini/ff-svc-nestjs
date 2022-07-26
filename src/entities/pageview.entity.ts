@@ -1,7 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  CreateDateColumn,
+  DeleteDateColumn,
+  UpdateDateColumn,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
-@Entity()
+@Entity({ name: 'pageviews' })
 export class Pageview {
   constructor(data: any) {
     this.id = data?.id;
@@ -10,20 +17,37 @@ export class Pageview {
     this.query = data?.query;
   }
 
-
   @ApiProperty()
   @PrimaryGeneratedColumn()
   id: number;
 
   @ApiProperty()
-  @Column()
+  @Column({
+    length: 32,
+  })
   ip: string;
 
   @ApiProperty()
-  @Column()
+  @Column({
+    length: 64,
+  })
   page: string;
 
   @ApiProperty()
-  @Column()
+  @Column({
+    length: 256,
+  })
   query: string;
+
+  @ApiProperty()
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @ApiProperty()
+  @UpdateDateColumn()
+  updatedAt: Date;
+
+  @ApiProperty()
+  @DeleteDateColumn()
+  deletedAt: Date;
 }

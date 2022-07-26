@@ -7,17 +7,27 @@ import { AmqpConnection, RabbitSubscribe } from '@golevelup/nestjs-rabbitmq';
 import { Lead } from 'src/entities/lead.entity';
 import { Pageview } from 'src/entities/pageview.entity';
 
+const { GENERATOR_SIZE = '10' } = process.env;
+
 @Injectable()
-export class TasksService {
-  private readonly logger = new Logger(TasksService.name);
-  constructor(private readonly queue: AmqpConnection) {}
+export class GeneratorService {
+  private readonly logger = new Logger(GeneratorService.name);
+  constructor(private readonly channel: AmqpConnection) {}
 
   @Cron('* * * * * *')
   async handleCron() {
+    return Promise.all(
+      Array(parseInt(GENERATOR_SIZE))
+        .fill(null)
+        .map(() => this.package()),
+    );
+  }
+
+  async package() {
     const pageview = this.randomPageview();
 
     try {
-      await this.queue.publish('pageviews', 'new', new Pageview(pageview));
+      await this.channel.publish('pageviews', 'new', new Pageview(pageview));
     } catch (error) {
       this.logger.error(error);
     }
@@ -26,7 +36,7 @@ export class TasksService {
       const lead = this.randomLead();
       lead.ip = pageview.ip;
       try {
-        await this.queue.publish('leads', 'new', new Lead(lead));
+        await this.channel.publish('leads', 'new', new Lead(lead));
       } catch (error) {
         this.logger.error(error);
       }
@@ -45,6 +55,7 @@ export class TasksService {
     return {
       ip: null,
       name: faker.name.findName(),
+      email: faker.internet.email(),
       mobile: faker.phone.number('(##)#####-####'),
       country: faker.address.country(),
       city: faker.address.city(),
@@ -57,15 +68,23 @@ export class TasksService {
     exchange: 'pageviews',
     routingKey: 'new',
     queue: 'pageviews.new',
+    queueOptions: {
+      autoDelete: true,
+      durable: false,
+    },
   })
   createPageview(pageview: Pageview) {
-    return getConnection('cn2').getRepository(Pageview).save(pageview);
+    return getConnection('cn1').getRepository(Pageview).save(pageview);
   }
 
   @RabbitSubscribe({
     exchange: 'leads',
     routingKey: 'new',
     queue: 'leads.new',
+    queueOptions: {
+      autoDelete: true,
+      durable: false,
+    },
   })
   createLead(lead: Lead) {
     return getConnection('cn2').getRepository(Lead).save(lead);

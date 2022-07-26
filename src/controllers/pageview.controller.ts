@@ -15,35 +15,35 @@ import { Pageview } from '../entities/pageview.entity';
 export class PageviewController {
   @Get()
   findAll() {
-    return getConnection('cn2').getRepository(Pageview).find();
+    return getConnection('cn1').getRepository(Pageview).find();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return getConnection('cn2')
+    return getConnection('cn1')
       .getRepository(Pageview)
       .findOne(+id);
   }
 
   @Post()
   create(@Body() pageview: Pageview) {
-    return getConnection('cn2').getRepository(Pageview).save(pageview);
+    return getConnection('cn1').getRepository(Pageview).save(pageview);
   }
 
   @Patch(':id')
   async update(@Param('id') id: string, @Body() pageview: Pageview) {
-    const obj = await getConnection('cn2')
+    const obj = await getConnection('cn1')
       .getRepository(Pageview)
       .findOne(+id);
 
     Object.entries(pageview).forEach(([k, v]) => (obj[k] = v));
-    await getConnection('cn2').getRepository(Pageview).update(id, obj);
+    await getConnection('cn1').getRepository(Pageview).update(id, obj);
 
     return obj;
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return getConnection('cn2').getRepository(Pageview).delete(id);
+    return getConnection('cn1').getRepository(Pageview).delete(id);
   }
 }
