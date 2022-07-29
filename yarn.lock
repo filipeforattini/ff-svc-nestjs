@@ -395,24 +395,23 @@
   dependencies:
     lodash "^4.17.15"
 
-"@golevelup/nestjs-modules@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@golevelup/nestjs-modules/-/nestjs-modules-0.6.0.tgz#bba08f06e7eb67d14fed2852984812e646c7cfed"
-  integrity sha512-h48PCCQUsFMEI5lbha3mRHKyFacFlWD8y5FL4asr23A96SKkMVUHsF3FQ3jKTGYNcPTdSnj+wNMTc5rxJYqAxQ==
+"@golevelup/nestjs-modules@^0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@golevelup/nestjs-modules/-/nestjs-modules-0.6.1.tgz#0b755d2406fed8acb8e61ee3ab52b39994ddf313"
+  integrity sha512-E0STg8In8fhIivnGDJAA70+XLPHzK5bMTkCnif9FbZ8waTYDQ3T/QQL0h73k+CUFeznn1hmuEW14sNaE+8cd7w==
   dependencies:
     lodash "^4.17.21"
 
-"@golevelup/nestjs-rabbitmq@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@golevelup/nestjs-rabbitmq/-/nestjs-rabbitmq-3.0.0.tgz#db4a28c96c74e54a9664461fa1a22c727091ab77"
-  integrity sha512-aVLOXPuTwHAEX8yGXSzXuxWmzdbNHn1v/n3RxNyAhHsciPS66yHHW4/dwQKZ4FuJ9S99WVVvNdE3JiOX/aS3dA==
+"@golevelup/nestjs-rabbitmq@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@golevelup/nestjs-rabbitmq/-/nestjs-rabbitmq-3.2.0.tgz#4872024fe8319df19d872897cb81907d2b55e442"
+  integrity sha512-nzaE3LdxxWfqXM+O+V+YqEh4jDdAsg8eC97twJJASTbHw1q1ssVC7BuQiGoy04CvxVfU6tQE28FnHl+/yjVFwQ==
   dependencies:
     "@golevelup/nestjs-common" "^1.4.4"
     "@golevelup/nestjs-discovery" "^3.0.0"
-    "@golevelup/nestjs-modules" "^0.6.0"
+    "@golevelup/nestjs-modules" "^0.6.1"
     amqp-connection-manager "^3.0.0"
     amqplib "^0.8.0"
-    uuid "^3.3.2"
 
 "@hapi/address@^4.0.1":
   version "4.1.0"
@@ -935,14 +934,6 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.3.tgz#472eaab5f15c1ffdd7f8628bd4c4f753995ec79e"
   integrity sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==
 
-"@types/amqplib@^0.8.1":
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/@types/amqplib/-/amqplib-0.8.2.tgz#9c46f2c7fac381e4f81bcb612c00d54549697d22"
-  integrity sha512-p+TFLzo52f8UanB+Nq6gyUi65yecAcRY3nYowU6MPGFtaJvEDxcnFWrxssSTkF+ts1W3zyQDvgVICLQem5WxRA==
-  dependencies:
-    "@types/bluebird" "*"
-    "@types/node" "*"
-
 "@types/babel__core@^7.1.14":
   version "7.1.19"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.19.tgz#7b497495b7d1b4812bdb9d02804d0576f43ee460"
@@ -975,11 +966,6 @@
   integrity sha512-kVzjari1s2YVi77D3w1yuvohV2idweYXMCDzqBiVNN63TcDWrIlTVOYpqVrvbbyOE/IyzBoTKF0fdnLPEORFxA==
   dependencies:
     "@babel/types" "^7.3.0"
-
-"@types/bluebird@*":
-  version "3.5.36"
-  resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.36.tgz#00d9301d4dc35c2f6465a8aec634bb533674c652"
-  integrity sha512-HBNx4lhkxN7bx6P0++W8E289foSu8kO8GCk2unhuVggO+cE7rh9DhZUyPhUxNRG9m+5B5BTKxZQ5ZP92x/mx9Q==
 
 "@types/body-parser@*":
   version "1.19.2"
@@ -1466,7 +1452,7 @@ ajv@^8.0.0, ajv@^8.0.1:
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-amqp-connection-manager@^3.0.0, amqp-connection-manager@^3.2.2:
+amqp-connection-manager@^3.0.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/amqp-connection-manager/-/amqp-connection-manager-3.9.0.tgz#aebebfebd506449b0831e2669d5f89005534392e"
   integrity sha512-ZKw9ckJKz40Lc2pC7DY0NVocpzPalMaCgv0sBn+N4er2QFAJul9pIiMOm/FsPHeCzB+FulV7PckOpmZvWvewGQ==
@@ -1896,19 +1882,6 @@ cjs-module-lexer@^1.0.0:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/cjs-module-lexer/-/cjs-module-lexer-1.2.2.tgz#9f84ba3244a512f3a54e5277e8eef4c489864e40"
   integrity sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==
-
-class-transformer@^0.4.0:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/class-transformer/-/class-transformer-0.4.1.tgz#eb86449fb5dc8333acbf880c96214acfa0d8dedf"
-  integrity sha512-mbBtth1BFa+pN2fmx6/NmMNxxyu9Mw9rx3rzKWBH7yoG+bfSoJOnEJ3qmB6yEKvoO502zUxSV2AqN7EUypC2Tg==
-
-class-validator@^0.13.1:
-  version "0.13.2"
-  resolved "https://registry.yarnpkg.com/class-validator/-/class-validator-0.13.2.tgz#64b031e9f3f81a1e1dcd04a5d604734608b24143"
-  integrity sha512-yBUcQy07FPlGzUjoLuUfIOXzgynnQPPruyK1Ge2B74k9ROwnle1E+NxLWnUv5OLU8hA/qL5leAE9XnXq3byaBw==
-  dependencies:
-    libphonenumber-js "^1.9.43"
-    validator "^13.7.0"
 
 cli-cursor@^3.1.0:
   version "3.1.0"
@@ -3629,11 +3602,6 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
-libphonenumber-js@^1.9.43:
-  version "1.10.9"
-  resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-1.10.9.tgz#e9dd7e3fd57aea694b5116d9a8d94dc2f2e5b15c"
-  integrity sha512-BvPlectKyHuA8xVBU4PerKdI1t+l71F/GCh6CQhe4j5bTwibF6Jcle88kDcyvq4aW55CXxWZg7yIYhzmjgrjkQ==
-
 lines-and-columns@^1.1.6:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.2.4.tgz#eca284f75d2965079309dc0ad9255abb2ebc1632"
@@ -3914,19 +3882,6 @@ nestjs-redoc@^2.2.2:
     "@nestjs/swagger" "^5.0.0"
     express-basic-auth "^1.2.0"
     express-handlebars "^5.1.0"
-
-nestjs-rmq@2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/nestjs-rmq/-/nestjs-rmq-2.6.1.tgz#8a24325de0aacbe7e1b64cb08da61cc9edc77b02"
-  integrity sha512-1c/CuHUc1GwTmbdsJuFEM37u6Rzcy5qbN3iYXD3rf8SSUiDhZPf3g3sVJL32FSPMstJ62OOHbDzYWkKOMpW+sw==
-  dependencies:
-    "@types/amqplib" "^0.8.1"
-    amqp-connection-manager "^3.2.2"
-    amqplib "^0.8.0"
-    chalk "^4.1.2"
-    class-transformer "^0.4.0"
-    class-validator "^0.13.1"
-    reflect-metadata "^0.1.13"
 
 node-emoji@1.11.0:
   version "1.11.0"
@@ -5226,11 +5181,6 @@ uuid@8.3.2, uuid@^8.3.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
-uuid@^3.3.2:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
-  integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
-
 v8-compile-cache-lib@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/v8-compile-cache-lib/-/v8-compile-cache-lib-3.0.1.tgz#6336e8d71965cb3d35a1bbb7868445a7c05264bf"
@@ -5249,11 +5199,6 @@ v8-to-istanbul@^9.0.1:
     "@jridgewell/trace-mapping" "^0.3.12"
     "@types/istanbul-lib-coverage" "^2.0.1"
     convert-source-map "^1.6.0"
-
-validator@^13.7.0:
-  version "13.7.0"
-  resolved "https://registry.yarnpkg.com/validator/-/validator-13.7.0.tgz#4f9658ba13ba8f3d82ee881d3516489ea85c0857"
-  integrity sha512-nYXQLCBkpJ8X6ltALua9dRrZDHVYxjJ1wgskNt1lH9fzGjs3tgojGSCBjmEPwkWS1y29+DrizMTW19Pr9uB2nw==
 
 vary@^1, vary@~1.1.2:
   version "1.1.2"
