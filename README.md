@@ -5,8 +5,8 @@ This repository is an example of a `svc` to be built with [filipeforattini/ff-ia
 
 | Language | Interpreter | Application | Docker |
 |:---:|:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/javascript.svg" height="38"> | <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nodedotjs.svg" height="38"> | <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nestjs.svg" height="38"> | <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nodedotjs.svg" height="38"> |
-| ECMAScript 2018	| 17 | 8 | 17-alpine |
+| <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/typescript.svg" height="38"> | <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nodedotjs.svg" height="38"> | <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nestjs.svg" height="38"> | <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nodedotjs.svg" height="38"> |
+| 4.3.5	| 17 | 8 | 17-alpine |
 
 ## Environments
 
