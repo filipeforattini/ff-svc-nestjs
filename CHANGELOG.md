@@ -1,3 +1,10 @@
+## [1.0.79](https://github.com/filipeforattini/ff-svc-nestjs/compare/v1.0.78...v1.0.79) (2022-08-24)
+
+
+### Bug Fixes
+
+* empty commit for testing ([803448b](https://github.com/filipeforattini/ff-svc-nestjs/commit/803448b54e136526f66c3adb361af2eabaf2af96))
+
 ## [1.0.78](https://github.com/filipeforattini/ff-svc-nestjs/compare/v1.0.77...v1.0.78) (2022-08-24)
 
 
