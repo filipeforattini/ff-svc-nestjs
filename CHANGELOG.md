@@ -1,3 +1,22 @@
+## [1.0.75](https://github.com/filipeforattini/ff-svc-nestjs/compare/v1.0.74...v1.0.75) (2022-08-24)
+
+
+### Bug Fixes
+
+* empty commit for testing ([476e7cb](https://github.com/filipeforattini/ff-svc-nestjs/commit/476e7cb1559b56e72ad9f1e17928d59c5dafacf8))
+* empty commit for testing ([3bd6d8b](https://github.com/filipeforattini/ff-svc-nestjs/commit/3bd6d8bd890be300e62269d8b2741081ac8d3abc))
+* empty commit for testing ([a9df2ad](https://github.com/filipeforattini/ff-svc-nestjs/commit/a9df2adabea674466768ecd211aa6142b148d479))
+* empty commit for testing ([c549b5b](https://github.com/filipeforattini/ff-svc-nestjs/commit/c549b5b7316140fc8d76db845e4e27439ead88a8))
+* empty commit for testing ([bc2282e](https://github.com/filipeforattini/ff-svc-nestjs/commit/bc2282e20ced24430bb2992a216f8b129f207027))
+* empty commit for testing ([094c9c1](https://github.com/filipeforattini/ff-svc-nestjs/commit/094c9c1172b1cca63037b9256b19b2d1f4ea22bf))
+* empty commit for testing ([6469943](https://github.com/filipeforattini/ff-svc-nestjs/commit/646994387ccd5d719152290333fe769c5463d811))
+* empty commit for testing ([f950be2](https://github.com/filipeforattini/ff-svc-nestjs/commit/f950be223195080e27fc770ac3622b2721298144))
+* empty commit for testing ([7daabf1](https://github.com/filipeforattini/ff-svc-nestjs/commit/7daabf11522c23668ac97e878e78971082e54a75))
+* empty commit for testing ([9aed88d](https://github.com/filipeforattini/ff-svc-nestjs/commit/9aed88d9b9c86779b87df26f0a7f48806b1d99fe))
+* empty commit for testing ([ab21b36](https://github.com/filipeforattini/ff-svc-nestjs/commit/ab21b366d731b7ff1e4ec6a4ad8e45e28736cdf3))
+* empty commit for testing ([cae288a](https://github.com/filipeforattini/ff-svc-nestjs/commit/cae288a57ab3fa9e17cb8d7320221a4d82e99723))
+* empty commit for testing ([e8fe73e](https://github.com/filipeforattini/ff-svc-nestjs/commit/e8fe73e874796738bd8154e45131b411eb0d8fc9))
+
 ## [1.0.74](https://github.com/filipeforattini/ff-svc-nestjs/compare/v1.0.73...v1.0.74) (2022-08-17)
 
 
