@@ -395,24 +395,23 @@
   dependencies:
     lodash "^4.17.15"
 
-"@golevelup/nestjs-modules@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@golevelup/nestjs-modules/-/nestjs-modules-0.6.0.tgz#bba08f06e7eb67d14fed2852984812e646c7cfed"
-  integrity sha512-h48PCCQUsFMEI5lbha3mRHKyFacFlWD8y5FL4asr23A96SKkMVUHsF3FQ3jKTGYNcPTdSnj+wNMTc5rxJYqAxQ==
+"@golevelup/nestjs-modules@^0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@golevelup/nestjs-modules/-/nestjs-modules-0.6.1.tgz#0b755d2406fed8acb8e61ee3ab52b39994ddf313"
+  integrity sha512-E0STg8In8fhIivnGDJAA70+XLPHzK5bMTkCnif9FbZ8waTYDQ3T/QQL0h73k+CUFeznn1hmuEW14sNaE+8cd7w==
   dependencies:
     lodash "^4.17.21"
 
-"@golevelup/nestjs-rabbitmq@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@golevelup/nestjs-rabbitmq/-/nestjs-rabbitmq-3.0.0.tgz#db4a28c96c74e54a9664461fa1a22c727091ab77"
-  integrity sha512-aVLOXPuTwHAEX8yGXSzXuxWmzdbNHn1v/n3RxNyAhHsciPS66yHHW4/dwQKZ4FuJ9S99WVVvNdE3JiOX/aS3dA==
+"@golevelup/nestjs-rabbitmq@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@golevelup/nestjs-rabbitmq/-/nestjs-rabbitmq-3.3.0.tgz#2bc7b1ae8c93a82e4d1463220daa55412591c53d"
+  integrity sha512-BLTeELIIAyvkmrRPUgCp2vnKxZqtOTak+L1rGI9Bgw9wqPRXZMjwBUEo9KlHDrdcvgRNal6FjRVBcMHKeCtA8A==
   dependencies:
     "@golevelup/nestjs-common" "^1.4.4"
     "@golevelup/nestjs-discovery" "^3.0.0"
-    "@golevelup/nestjs-modules" "^0.6.0"
+    "@golevelup/nestjs-modules" "^0.6.1"
     amqp-connection-manager "^3.0.0"
     amqplib "^0.8.0"
-    uuid "^3.3.2"
 
 "@hapi/address@^4.0.1":
   version "4.1.0"
@@ -5181,11 +5180,6 @@ uuid@8.3.2, uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
-
-uuid@^3.3.2:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
-  integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
 v8-compile-cache-lib@^3.0.1:
   version "3.0.1"
