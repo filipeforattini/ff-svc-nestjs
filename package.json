@@ -23,7 +23,7 @@
     "commit-with-pipe": "cd ../ff-iac-github-actions; npm run commit && cd ../ff-svc-moleculerjs; npm run commit"
   },
   "dependencies": {
-    "@faker-js/faker": "^7.3.0",
+    "@faker-js/faker": "^8.0.1",
     "@golevelup/nestjs-rabbitmq": "^3.0.0",
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
