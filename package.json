@@ -38,7 +38,7 @@
     "mysql2": "^2.3.3",
     "nestjs-redoc": "^2.2.2",
     "pg": "^8.6.0",
-    "redis": "^3",
+    "redis": "^4",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.5.6",
