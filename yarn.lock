@@ -2189,15 +2189,22 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-dotenv-expand@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-6.0.1.tgz#233328515e4b71091a6513e2ffe7e9a24b49bb0c"
-  integrity sha512-GNHcCOyRKLCXWnH3L/+sJ04PQxxgTOZDCPuQQnqkqPMGIilyoxHZ2JUNmh2VWKCfzVKH/AZsqcbuSYlDDVb/xw==
+dotenv-expand@^12.0.2:
+  version "12.0.2"
+  resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-12.0.2.tgz#0c812c61a71901b8bd90387e0e0edd0678b8a181"
+  integrity sha512-lXpXz2ZE1cea1gL4sz2Ipj8y4PiVjytYr3Ij0SWoms1PGxIv7m2CRKuRuCRtHdVuvM/hNJPMxt5PbhboNC4dPQ==
+  dependencies:
+    dotenv "^16.4.5"
 
 dotenv@^10.0.0:
   version "10.0.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
   integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
+
+dotenv@^16.4.5:
+  version "16.5.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.5.0.tgz#092b49f25f808f020050051d1ff258e404c78692"
+  integrity sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==
 
 dotenv@^8.2.0:
   version "8.6.0"
