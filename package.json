@@ -39,7 +39,7 @@
     "nestjs-redoc": "^2.2.2",
     "pg": "^8.6.0",
     "redis": "^3",
-    "reflect-metadata": "^0.1.13",
+    "reflect-metadata": "^0.1.14",
     "rimraf": "^3.0.2",
     "rxjs": "^7.5.6",
     "swagger-ui-express": "^4.1.0",
